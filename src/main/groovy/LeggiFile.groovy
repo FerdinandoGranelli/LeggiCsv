@@ -55,14 +55,16 @@ class LeggiFile {
                 capoAttuale = parts[posizione]
                 System.out.println(" CapoAttuale " + capoAttuale);
                 if (capoAttuale.equals(capoTrattato)){
-                    csvOut <<  """;${parts[0]};${parts[1]};${parts[8]};${parts[9]};${parts[10]};${parts[11]};${parts[12]};;;;;;\n"""
+                    // Titleproduct;SKU        ;PSKU       ;PREZZOITA  ;PREZZOEU   ;COLORE      ;TAGLIA      ;QUANTITA
+                    csvOut <<  """;${parts[0]};${parts[1]};${parts[8]};${parts[8]};${parts[10]};${parts[11]};${parts[12]};;;;;;\n"""
 
                 } else{
                     capoTrattato = parts[posizione]
                     if(!capoTrattato.equals("Descrizione Articolo")){
                         //                        csvOut <<  """$capoTrattato;${parts[1]};;;;;;;${parts[14]};${parts[15]};${parts[15]};${parts[17]};${parts[18]};\n"""
                         csvOut <<  """$capoTrattato;${parts[1]};;;;;;;;;;;;\n"""
-                        csvOut <<  """;${parts[0]};${parts[1]};${parts[8]};${parts[9]};${parts[10]};${parts[11]};${parts[12]};;;;;;\n"""
+                        // Titleproduct;SKU        ;PSKU       ;PREZZOITA  ;PREZZOEU   ;COLORE      ;TAGLIA      ;QUANTITA
+                         csvOut <<  """;${parts[0]};${parts[1]};${parts[8]};${parts[8]};${parts[10]};${parts[11]};${parts[12]};;;;;;\n"""
 
                     }
 

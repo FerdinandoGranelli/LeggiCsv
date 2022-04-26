@@ -60,8 +60,8 @@ class LeggiFile {
 
                 } else{
                     capoTrattato = parts[posizione]
-                    if(!capoTrattato.equals("Descrizione Articolo")){
-                        //                        csvOut <<  """$capoTrattato;${parts[1]};;;;;;;${parts[14]};${parts[15]};${parts[15]};${parts[17]};${parts[18]};\n"""
+                    if(!capoTrattato.equals("Descrizione")){
+                        //                                            categoria   ;sh descrizione; long descr; details   ; immagini
                         csvOut <<  """$capoTrattato;${parts[1]};;;;;;;${parts[15]};${parts[16]};${parts[17]};${parts[18]};${parts[19]};\n"""
                         // Titleproduct;SKU        ;PSKU       ;PREZZOITA  ;PREZZOEU   ;COLORE      ;TAGLIA      ;QUANTITA
                          csvOut <<  """;${parts[0]};${parts[1]};${parts[8]};${parts[9]};${parts[10]};${parts[11]};${parts[12]};;;;;;\n"""

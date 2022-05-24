@@ -1,7 +1,7 @@
 import org.apache.logging.log4j.LogManager
 import org.apache.logging.log4j.Logger
 
-class LeggiFile {
+class LeggiFileGiacenze {
     final static Logger logger = LogManager.getLogger(LeggiFile.class);
 
     static void main(String[] args) {
@@ -34,14 +34,14 @@ class LeggiFile {
         def capoTrattato
 
         masterLine.eachLine { line ->
-            def parts = line.split(";")
+            def parts = line.split("\t")
             def capoAttuale
             def tmpMap = [:]
             if (parts.length != 0) {
                 capoAttuale = parts[posizione]
                 System.out.println(" CapoAttuale " + capoAttuale);
-                    //         SKU        ;PSKU       ;QUANTITà  ;PREZZOEU   ;COLORE      ;TAGLIA      ;QUANTITA    ;QUANTITA
-                csvOut <<  """;${parts[0]};${parts[1]};${parts[8]};${parts[9]};${parts[10]};${parts[11]};${parts[12]};;;;;;\n"""
+                    //         SKU        ;PSKU       ;QUANTITà
+                csvOut <<  """${parts[0]};${parts[6]};${parts[8]};\n"""
 
             }
         }
